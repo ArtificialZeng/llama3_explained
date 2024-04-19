@@ -37,7 +37,7 @@
 
 ```bash
 huggingface-cli download meta-llama/Meta-Llama-3-8B-Instruct --include "original/*" --local-dir meta-llama/Meta-Llama-3-8B-Instruct
-
+```
 - 要与transformers一起使用，以下pipeline代码片段将下载并缓存权重:
 ```python
   import transformers
@@ -51,7 +51,7 @@ huggingface-cli download meta-llama/Meta-Llama-3-8B-Instruct --include "original
     model_kwargs={"torch_dtype": torch.bfloat16},
     device="cuda",
   )
-
+```
 ## 快速开始
 
 您可以按照以下步骤快速开始使用 Llama 3 模型。这些步骤将让您能够在本地进行快速推理。更多示例，请查看[Llama 配方仓库](https://github.com/facebookresearch/llama-recipes)。
@@ -77,7 +77,7 @@ torchrun --nproc_per_node 1 example_chat_completion.py \
     --ckpt_dir Meta-Llama-3-8B-Instruct/ \
     --tokenizer_path Meta-Llama-3-8B-Instruct/tokenizer.model \
     --max_seq_len 512 --max_batch_size 6
-
+```
 **注意**
 - 将 `Meta-Llama-3-8B-Instruct/` 替换为您的检查点目录路径，将 `Meta-Llama-3-8B-Instruct/tokenizer.model` 替换为您的分词器模型路径。
 - `–nproc_per_node` 应设置为您使用的模型的 [MP](#inference) 值。
